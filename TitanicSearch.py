@@ -75,7 +75,7 @@ def getSea(category):
     elif category == df.columns.tolist()[9]:
         fa = input("Fare paid for ticket: ")
         for index, row in df.iterrows():
-            if row['Fare'] == fa:
+            if float(row['Fare']) == float(fa):
                 print(df.iloc[index])
     elif category == df.columns.tolist()[10]:
         ca = input("Cabin number: ")
@@ -85,7 +85,7 @@ def getSea(category):
     elif category == df.columns.tolist()[11]:
         em = input("Where the passenger got on the ship (C - Cherbourg, S - Southampton, Q = Queenstown): ")
         for index, row in df.iterrows():
-            if row['Embarked'] == em:
+            if str(row['Embarked']).casefold() == em.casefold():
                 print(df.iloc[index])
 
 
